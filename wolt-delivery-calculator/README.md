@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# Delivery Fee Calculator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+This is a simple React component, `DeliveryFeeCalculator`, designed to calculate the delivery fee based on various factors such as cart value, delivery distance, number of items, and order time. The calculator employs a set of rules and surcharges to determine the final delivery fee.
 
-## Available Scripts
+## How it Works
+The delivery fee is calculated using the `calculateDeliveryFee` function within the component. Here's a breakdown of the key factors considered:
 
-In the project directory, you can run:
+### Cart Value
+- A base fee of €2 is applied per kilometer.
+- Additional surcharges may be applied based on the cart value.
+- A maximum total surcharge of €15 is enforced.
 
-### `npm start`
+### Delivery Distance
+- A base fee is calculated for the first kilometer.
+- Additional surcharges are applied for every 500 meters beyond the first kilometer.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Number of Items
+- A surcharge is applied for orders with more than four items.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Order Time
+- Friday rush hour surcharge is applied if the order is placed on a Friday between 3 PM and 7 PM (UTC).
 
-### `npm test`
+## Form Input Fields
+- **Cart Value (€):** Enter the total value of items in the shopping cart.
+- **Delivery Distance (m):** Input the distance of delivery in meters.
+- **Number of Items:** Specify the total number of items in the order.
+- **Order Time:** Choose the date and time when the order is placed.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Usage
+1. Fill in the required details in the input fields.
+2. Click the "Calculate Delivery Fee" button.
+3. The calculated delivery fee will be displayed in an alert.
 
-### `npm run build`
+## Important Notes
+- The maximum delivery fee is capped at €15.
+- Orders with a cart value greater than or equal to €200 have a delivery fee of €0.
+- Friday rush hour surcharge is applicable during specific hours.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Feel free to integrate this component into your React application for an easy and customizable delivery fee calculation.
