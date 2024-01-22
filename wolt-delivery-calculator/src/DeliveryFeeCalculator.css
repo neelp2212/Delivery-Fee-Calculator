@@ -1,0 +1,17 @@
+.calculator-container {
+    width: 400px; 
+    margin: left; 
+    border: 10px solid black; 
+    padding: 20px; 
+  }
+  
+  .calculator-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-field {
+    margin-bottom: 15px;
+  }
+  
+  
